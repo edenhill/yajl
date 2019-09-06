@@ -58,7 +58,7 @@ yajl_string_encode(const yajl_print_t print,
             case '\b': escaped = "\\b"; break;
             case '\t': escaped = "\\t"; break;
             default:
-                if ((unsigned char) str[end] < 32) {
+                if ((unsigned char) str[end] < 32 || (unsigned char) str[end] > 127) {
                     CharToHex(str[end], hexBuf + 4);
                     escaped = hexBuf;
                 }

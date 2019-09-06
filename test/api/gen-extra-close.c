@@ -15,5 +15,5 @@ int main(void) {
   CHK(yajl_gen_map_close(yg));
   s = yajl_gen_map_close(yg);
 
-  return (yajl_gen_generation_complete == s);
+  return !(yajl_gen_generation_complete == s);
 }
